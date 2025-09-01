@@ -34,7 +34,6 @@ int  main(){
     L.elem[4] = 50;
     L.count = 5;
 
-
     char choice;
 
 
@@ -65,8 +64,6 @@ int  main(){
         default:
             break;
         }
-
-
 
 
 }
