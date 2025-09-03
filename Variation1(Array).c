@@ -43,7 +43,7 @@ int  main(){
         displayList(L);
 
 
-        printf("\nSelect what u wanna do:\n\nA.)Insert at Pos \nX.)Exit\n");
+        printf("\nSelect what u wanna do:\n\nA.)Insert at Pos\n B.)Delete at Pos\nX.)Exit\n");
             scanf("%c", &choice);
            
         switch (choice){
@@ -52,11 +52,11 @@ int  main(){
             printf("\nUpdated List: ");
             displayList(L);
         }
-        //  case 'B':{
-        //     L = deletetPos(L, data, position);
-        //     printf("\nUpdated List: ");
-        //     displayList(L);
-        // }
+         case 'B':{
+            L = deletePos(L, position);
+            printf("\nUpdated List: ");
+            displayList(L);
+        }
         case 'X':{
            
             break;
@@ -64,8 +64,6 @@ int  main(){
         default:
             break;
         }
-
-asdasd
 }
 
 
@@ -102,10 +100,22 @@ List insertPos(List L, int data, int position){
     return L;
 }
 
-// List deletetPos(List L, int position){
-    
-//     printf("");
-// }
+List deletePos(List L, int position){
+
+        printf("Enter a position to delete: ");
+        scanf("%d", &position);
+
+        if(position < 0 || position>= L.count){
+            printf("Please pick a valid position");
+        }
+
+        for (int i = position; i < L.count; i++) {
+            L.elem[i] = L.elem[i+1];
+        }
+
+        L.count--;
+
+}
 
 void displayList (List L){
 
